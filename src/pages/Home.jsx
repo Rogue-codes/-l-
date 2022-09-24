@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Landing from '../components/landing/Landing'
-import Nav from '../components/nav/Nav'
 
 function Home() {
   return (
     <Container>
-        {/* <Nav/> */}
         <Landing/>
     </Container>
   )
