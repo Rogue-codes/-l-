@@ -136,6 +136,7 @@ export default SignUp;
 const Container = styled.div`
   @media (max-width: 767px) {
     background-position: 70% 50%;
+    align-items: flex-start;
   }
   width: 100%;
   height: 100vh;
@@ -156,7 +157,9 @@ const Container = styled.div`
   form {
     @media (max-width: 767px) {
       width: 90%;
+      margin-top: 10%;
     }
+
     width: 50%;
     height: auto;
     padding-bottom: 5%;

@@ -6,7 +6,7 @@ import Nav from '../components/nav/Nav'
 function Home() {
   return (
     <Container>
-        <Nav/>
+        {/* <Nav/> */}
         <Landing/>
     </Container>
   )
@@ -17,5 +17,4 @@ export default Home
 const Container = styled.div`
     width: 100%;
     min-height: 100vh;
-    position: relative;
 `

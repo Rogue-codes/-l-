@@ -40,8 +40,8 @@ const Card = styled.div`
     background: #000000a3;
   }
   width: 60%;
-  height: 40vh;
-  margin-top: 20%;
+  height: 60vh;
+  margin-top: 5%;
   background: #0000006b;
   padding-left: 2%;
   border-radius: 5px;
@@ -63,6 +63,13 @@ const Desc = styled.p`
   font-size: 2vw;
 `
 const View = styled.button`
+  width: 30%;
+  height: 9vh;
+  font-size: 1.3vw;
+  margin-top: 8%;
+  background: #2f53e9;
+  border: none;
+  color: #fff;
 @media (max-width: 767px) {
   width: 50%;
   height: 7vh;

@@ -83,6 +83,7 @@ export default SignIn
 const Container = styled.div`
   @media (max-width: 767px) {
     background-position: 70% 50%;
+    align-items: flex-start;
   }
   width: 100%;
   height: 100vh;
@@ -103,11 +104,12 @@ const Container = styled.div`
   form {
     @media (max-width: 767px) {
       width: 90%;
+      margin-top: 15%;
     }
     width: 50%;
     height: auto;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom:10%;
     background: #f8f8f8ac;
     input[type="email"] {
       font-family: "Poppins", sans-serif;

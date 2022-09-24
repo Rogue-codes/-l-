@@ -54,7 +54,7 @@ function Nav() {
                 </div>
 
                 <div className="reg">
-                    <Link to='/register'>Sign Up</Link>
+                    <Link to='/register' onClick={togglemenu}>Sign Up</Link>
                 </div>
                 </div>
             </MobileMenu>
