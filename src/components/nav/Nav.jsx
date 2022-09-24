@@ -210,7 +210,7 @@ const Auth = styled.div`
     }
 `
 const MobileMenu = styled.div`
-    background:#f8f8f8c1;
+    background:#f8f8f8;
     width: 100%;
     position: fixed;
     top: 0;
