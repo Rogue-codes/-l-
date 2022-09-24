@@ -33,7 +33,7 @@ const Container = styled.div`
 const Card = styled.div`
   @media (max-width: 767px) {
     width: 95%;
-    height: 80%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
