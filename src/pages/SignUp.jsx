@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import home from "../Assets/reg.webp";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
+import {gsap, Power3} from 'gsap'
 
 function SignUp() {
+  const containerRef = useRef()
+  const formRef = useRef()
+  useEffect(() => {
+    gsap.to(containerRef.current, 2, { opacity: 1, ease: Power3.easeOut});
+    gsap.to(formRef.current, .5, { opacity: 1, y:'-2%', ease: Power3.easeOut});
+  });
   const emailRegex = RegExp(/^\S+@\S+\.\S+$/);
   const formik = useFormik({
     initialValues: {
@@ -45,8 +52,8 @@ function SignUp() {
 
   console.log(formik.touched);
   return (
-    <Container>
-      <form action="" onSubmit={formik.handleSubmit}>
+    <Container ref={containerRef}>
+      <form action="" onSubmit={formik.handleSubmit} ref={formRef}>
         <div className="name">
           <div className="fname">
             <input
@@ -138,7 +145,8 @@ const Container = styled.div`
     background-position: 70% 50%;
     align-items: flex-start;
   }
-  width: 100%;
+  max-width: 100%;
+  opacity: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -159,7 +167,7 @@ const Container = styled.div`
       width: 90%;
       margin-top: 10%;
     }
-
+    margin-top: 5%;
     width: 50%;
     height: auto;
     padding-bottom: 5%;

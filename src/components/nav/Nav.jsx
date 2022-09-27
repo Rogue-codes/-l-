@@ -8,13 +8,20 @@ function Nav() {
     const togglemenu = ()=>{
         setShowMenu(!showMenu)
     }
+
+    const [scroll, setScroll] = useState(false)
+
+    window.onscroll = () => {
+        setScroll(window.pageYOffset === 0 ? false : true)
+        return window.onscroll(null)
+    }
   return (
-    <Container>
-        <Logo>
+    <Container bg={scroll ? "#0b0b0bcf" : null}>
+        <Logo cl={scroll ? "#fff" : null}>
             ulo
         </Logo>
 
-        <Options>
+        <Options  cl={scroll ? "#fff" : null}>
             <Link to='/'>Home</Link>
             <Link to='/'>Rent</Link>
             <Link to='/'>Buy</Link>
@@ -73,9 +80,11 @@ const Container = styled.nav`
     padding: 2%;
     align-items: center;
     position: fixed;
+    top: 0;
     z-index: 999999;
-    position: relative;
     background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.3) 50%);
+    background-color: ${props => props.bg};
+    transition: all .5s linear;
     .menu{
         @media (min-width: 768px) {
             display: none;
@@ -170,6 +179,7 @@ const Logo = styled.h1`
     }
     font-family: 'Lobster', cursive;
     font-size: 3vw;
+    color: ${props=>props.cl};
 `
 const Options = styled.div`
     @media (max-width: 767px) {
@@ -186,7 +196,7 @@ const Options = styled.div`
         color: #000;
         font-weight: 500;
         font-family: 'Poppins', sans-serif;
-        color: #000;
+        color: ${props =>props.cl};
         &:hover{
             color: #000;
         }
@@ -206,6 +216,7 @@ const Auth = styled.div`
             background: #2f53e9;
             color: #fff;
             font-size: 1.3vw;
+            cursor: pointer;
         }
     }
 `

@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import home from '../../Assets/home.webp'
+import {gsap, Power3} from 'gsap'
 function Landing() {
+  const containerRef = useRef()
+  const cardRef = useRef()
+  useEffect(() => {
+    gsap.to(containerRef.current, 2, { opacity: 1, ease: Power3.easeOut});
+    gsap.to(cardRef.current, 2, { opacity: 1, x:'2%', ease: Power3.easeOut});
+  });
   return (
-    <Container>
-        <Card>
+    <Container ref={containerRef}>
+        <Card ref={cardRef}>
           <Header>A Good Home</Header> 
           <Header>Is a Good Life</Header> 
           <Desc>Discover the Most comfortable place for your Future</Desc>
@@ -20,6 +27,7 @@ const Container = styled.div`
   width: 100%;
   height: 98vh;
   position: absolute;
+  opacity: 0;
   top: 0;
   display: flex;
   align-items: center;
@@ -40,6 +48,7 @@ const Card = styled.div`
     background: #000000a3;
   }
   width: 60%;
+  opacity: 0;
   height: 60vh;
   margin-top: 5%;
   background: #0000006b;
@@ -66,7 +75,7 @@ const View = styled.button`
   width: 30%;
   height: 9vh;
   font-size: 1.3vw;
-  margin-top: 8%;
+  margin-top: 4%;
   background: #2f53e9;
   border: none;
   color: #fff;
